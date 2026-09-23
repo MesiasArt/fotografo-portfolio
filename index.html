@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manuel Shoo | Fotografía que cuenta historias</title>
+    <meta name="description" content="Fotografía de bodas, retratos, eventos, baby showers, infantil y familia. Imágenes naturales y memorables por Manuel Shoo.">
+    <meta name="author" content="Manuel Shoo">
+    <meta name="theme-color" content="#f7f4ef">
+    <link rel="canonical" href="./">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es">
+    <meta property="og:title" content="Manuel Shoo | Fotografía que cuenta historias">
+    <meta property="og:description" content="Fotografía de bodas, retratos, eventos y familia. Imágenes naturales y memorables por Manuel Shoo.">
+    <meta property="og:image" content="images/og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manuel Shoo | Fotografía que cuenta historias">
+    <meta name="twitter:description" content="Fotografía de bodas, retratos, eventos y familia por Manuel Shoo.">
+    <meta name="twitter:image" content="images/og.jpg">
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#inicio">
+          <span class="brand-name">Manuel Shoo</span>
+          <span class="brand-tag">Photography</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-controls="navegacion-principal"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <nav id="navegacion-principal" class="site-nav" aria-label="Principal">
+      <ul>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <main id="contenido">
+      <section class="hero" id="inicio" aria-label="Presentación">
+        <div class="hero-media">
+          <img
+            src="images/hero-boda.jpg"
+            alt="Novios frente a frente al atardecer durante una sesión de boda."
+            width="1920"
+            height="1080"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </div>
+        <div class="hero-content">
+          <h1>Manuel Shoo</h1>
+          <p class="hero-lead">Fotografía que cuenta historias.</p>
+          <a class="btn btn-solid" href="#portafolio">
+            Ver portafolio
+            <span class="btn-arrow" aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section portafolio" id="portafolio" aria-labelledby="titulo-portafolio">
+        <div class="container">
+          <h2 id="titulo-portafolio">Portafolio</h2>
+
+          <div class="filters" role="group" aria-label="Filtrar fotografías">
+            <button type="button" class="filter-btn is-active" data-filter="todas" aria-pressed="true">Todas</button>
+            <button type="button" class="filter-btn" data-filter="bodas" aria-pressed="false">Bodas</button>
+            <button type="button" class="filter-btn" data-filter="retratos" aria-pressed="false">Retratos</button>
+            <button type="button" class="filter-btn" data-filter="eventos" aria-pressed="false">Eventos</button>
+            <button type="button" class="filter-btn" data-filter="familia" aria-pressed="false">Familia</button>
+          </div>
+
+          <div class="gallery" id="galeria">
+            <button type="button" class="gallery-item" data-category="bodas" data-full="images/boda-01.jpg" data-caption="Bodas">
+              <span class="gallery-frame"><img src="images/thumbs/boda-01.jpg" alt="Novios de espaldas durante una sesión de boda." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Bodas</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="retratos" data-full="images/retrato-01.jpg" data-caption="Retratos">
+              <span class="gallery-frame"><img src="images/thumbs/retrato-01.jpg" alt="Retrato de una mujer con fondo claro." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Retratos</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="eventos" data-full="images/evento-01.jpg" data-caption="Eventos">
+              <span class="gallery-frame"><img src="images/thumbs/evento-01.jpg" alt="Salón de evento iluminado con luces cálidas." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Eventos</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="familia" data-full="images/babyshower-01.jpg" data-caption="Baby shower">
+              <span class="gallery-frame"><img src="images/thumbs/babyshower-01.jpg" alt="Sesión de maternidad en un entorno claro." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Baby shower</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="familia" data-full="images/infantil-01.jpg" data-caption="Fotografía infantil">
+              <span class="gallery-frame"><img src="images/thumbs/infantil-01.jpg" alt="Retrato de una niña con lazo blanco." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Infantil</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="familia" data-full="images/familia-01.jpg" data-caption="Familia">
+              <span class="gallery-frame"><img src="images/thumbs/familia-01.jpg" alt="Retrato de un niño con camisa clara." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Familia</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="bodas" data-full="images/boda-02.jpg" data-caption="Bodas">
+              <span class="gallery-frame"><img src="images/thumbs/boda-02.jpg" alt="Anillos de boda sobre una superficie clara." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Bodas</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="familia" data-full="images/familia-02.jpg" data-caption="Familia">
+              <span class="gallery-frame"><img src="images/thumbs/familia-02.jpg" alt="Niño en la playa durante una sesión familiar." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Familia</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="retratos" data-full="images/retrato-02.jpg" data-caption="Retratos">
+              <span class="gallery-frame"><img src="images/thumbs/retrato-02.jpg" alt="Retrato de una mujer con luz de estudio." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Retratos</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="eventos" data-full="images/evento-02.jpg" data-caption="Eventos">
+              <span class="gallery-frame"><img src="images/thumbs/evento-02.jpg" alt="Mesa de evento con flores blancas y copas." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Eventos</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="familia" data-full="images/infantil-02.jpg" data-caption="Fotografía infantil">
+              <span class="gallery-frame"><img src="images/thumbs/infantil-02.jpg" alt="Bebé dormido sobre una manta clara." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Infantil</span>
+            </button>
+            <button type="button" class="gallery-item" data-category="familia" data-full="images/familia-03.jpg" data-caption="Familia">
+              <span class="gallery-frame"><img src="images/thumbs/familia-03.jpg" alt="Familia caminando de la mano en la playa al atardecer." width="800" height="600" loading="lazy" decoding="async"></span>
+              <span class="gallery-caption">Familia</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+        <div class="container about-grid">
+          <figure class="about-photo">
+            <img
+              src="images/sobre-manuel.jpg"
+              alt="Fotografía placeholder de Manuel Shoo con una cámara."
+              width="1600"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+          <div class="about-copy">
+            <h2 id="titulo-sobre-mi">Sobre mí</h2>
+            <p>Cada fotografía es una oportunidad para conservar un momento, una emoción y una historia. Mi objetivo es crear imágenes naturales y memorables que puedas volver a disfrutar con el paso del tiempo.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services" id="servicios" aria-labelledby="titulo-servicios">
+        <div class="container">
+          <h2 id="titulo-servicios">Servicios</h2>
+          <ul class="services-list">
+            <li>
+              <img src="images/thumbs/servicio-bodas.jpg" alt="" width="800" height="600" loading="lazy" decoding="async">
+              <span>Bodas</span>
+            </li>
+            <li>
+              <img src="images/thumbs/retrato-01.jpg" alt="" width="800" height="600" loading="lazy" decoding="async">
+              <span>Retratos</span>
+            </li>
+            <li>
+              <img src="images/thumbs/evento-02.jpg" alt="" width="800" height="600" loading="lazy" decoding="async">
+              <span>Eventos</span>
+            </li>
+            <li>
+              <img src="images/thumbs/babyshower-02.jpg" alt="" width="800" height="600" loading="lazy" decoding="async">
+              <span>Baby showers</span>
+            </li>
+            <li>
+              <img src="images/thumbs/infantil-02.jpg" alt="" width="800" height="600" loading="lazy" decoding="async">
+              <span>Fotografía infantil</span>
+            </li>
+            <li>
+              <img src="images/thumbs/familia-03.jpg" alt="" width="800" height="600" loading="lazy" decoding="async">
+              <span>Sesiones familiares</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section contact" id="contacto" aria-labelledby="titulo-contacto">
+        <div class="contact-ornament contact-ornament-left" aria-hidden="true">
+          <svg viewBox="0 0 120 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M78 18c-18 28-38 48-52 86 22-10 40-6 52 14-26 6-48 28-50 62 28-16 50-8 58 16-20 10-36 36-30 64 24-22 48-18 56 6" stroke="currentColor" stroke-width="0.8"/>
+            <path d="M54 72c8-14 22-18 28-8M40 132c12-8 26-4 30 8M48 188c10-10 24-8 28 4" stroke="currentColor" stroke-width="0.7"/>
+          </svg>
+        </div>
+        <div class="container contact-inner">
+          <h2 id="titulo-contacto">¿Hablamos?</h2>
+          <p>Cuéntame sobre tu próxima sesión o evento.</p>
+          <div class="contact-actions">
+            <!-- PLACEHOLDER: reemplazar REEMPLAZAR_WHATSAPP por el número real. Ejemplo: https://wa.me/18095551234 -->
+            <a
+              class="btn btn-whatsapp"
+              href="https://wa.me/REEMPLAZAR_WHATSAPP"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Enlace placeholder: sustituir REEMPLAZAR_WHATSAPP por el número real"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M12.04 2C6.58 2 2.15 6.4 2.15 11.83c0 1.74.46 3.44 1.34 4.94L2 22l5.39-1.41a10.1 10.1 0 0 0 4.65 1.15h.01c5.46 0 9.89-4.4 9.89-9.83C21.94 6.4 17.5 2 12.04 2zm5.76 13.99c-.24.67-1.4 1.28-1.94 1.36-.5.08-1.13.11-1.82-.11-.42-.14-.96-.31-1.66-.61-2.92-1.26-4.82-4.2-4.97-4.39-.14-.2-1.18-1.56-1.18-2.98s.75-2.11 1.01-2.4c.24-.27.64-.4 1.02-.4.12 0 .23 0 .33.01.29.01.44.03.63.49.24.58.81 2 .88 2.15.07.15.12.33.02.53-.09.2-.14.32-.27.49l-.4.47c-.13.15-.27.31-.12.6.15.29.68 1.12 1.46 1.81 1.01.9 1.85 1.18 2.14 1.31.29.13.46.11.63-.07.17-.18.73-.84.93-1.13.2-.29.39-.24.66-.14.27.1 1.71.8 2 .95.29.15.48.22.55.35.07.13.07.75-.17 1.42z"/>
+              </svg>
+              WhatsApp
+            </a>
+            <!-- PLACEHOLDER: reemplazar REEMPLAZAR_INSTAGRAM por el usuario real. Ejemplo: https://instagram.com/manuelshoo -->
+            <a
+              class="btn btn-instagram"
+              href="https://instagram.com/REEMPLAZAR_INSTAGRAM"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Enlace placeholder: sustituir REEMPLAZAR_INSTAGRAM por el usuario real"
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm-5 3.2A3.8 3.8 0 1 1 8.2 12 3.8 3.8 0 0 1 12 8.2zm0 2A1.8 1.8 0 1 0 13.8 12 1.8 1.8 0 0 0 12 10.2zM17.2 6.6a.9.9 0 1 1-.9.9.9.9 0 0 1 .9-.9z"/>
+              </svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+        <div class="contact-ornament contact-ornament-right" aria-hidden="true">
+          <svg viewBox="0 0 120 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M42 18c18 28 38 48 52 86-22-10-40-6-52 14 26 6 48 28 50 62-28-16-50-8-58 16 20 10 36 36 30 64-24-22-48-18-56 6" stroke="currentColor" stroke-width="0.8"/>
+            <path d="M66 72c-8-14-22-18-28-8M80 132c-12-8-26-4-30 8M72 188c-10-10-24-8-28 4" stroke="currentColor" stroke-width="0.7"/>
+          </svg>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand brand-footer" href="#inicio">
+          <span class="brand-name">Manuel Shoo</span>
+          <span class="brand-tag">Photography</span>
+        </a>
+        <p>© 2026 Manuel Shoo Photography</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/REEMPLAZAR_INSTAGRAM" target="_blank" rel="noopener noreferrer" aria-label="Instagram (enlace placeholder)">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm-5 3.2A3.8 3.8 0 1 1 8.2 12 3.8 3.8 0 0 1 12 8.2zm0 2A1.8 1.8 0 1 0 13.8 12 1.8 1.8 0 0 0 12 10.2zM17.2 6.6a.9.9 0 1 1-.9.9.9.9 0 0 1 .9-.9z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/REEMPLAZAR_WHATSAPP" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (enlace placeholder)">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M12.04 2C6.58 2 2.15 6.4 2.15 11.83c0 1.74.46 3.44 1.34 4.94L2 22l5.39-1.41a10.1 10.1 0 0 0 4.65 1.15h.01c5.46 0 9.89-4.4 9.89-9.83C21.94 6.4 17.5 2 12.04 2zm5.76 13.99c-.24.67-1.4 1.28-1.94 1.36-.5.08-1.13.11-1.82-.11-.42-.14-.96-.31-1.66-.61-2.92-1.26-4.82-4.2-4.97-4.39-.14-.2-1.18-1.56-1.18-2.98s.75-2.11 1.01-2.4c.24-.27.64-.4 1.02-.4.12 0 .23 0 .33.01.29.01.44.03.63.49.24.58.81 2 .88 2.15.07.15.12.33.02.53-.09.2-.14.32-.27.49l-.4.47c-.13.15-.27.31-.12.6.15.29.68 1.12 1.46 1.81 1.01.9 1.85 1.18 2.14 1.31.29.13.46.11.63-.07.17-.18.73-.84.93-1.13.2-.29.39-.24.66-.14.27.1 1.71.8 2 .95.29.15.48.22.55.35.07.13.07.75-.17 1.42z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lightbox-caption"
+    >
+      <div class="lightbox-backdrop" data-lightbox-close></div>
+      <button type="button" class="lightbox-close" data-lightbox-close aria-label="Cerrar fotografía">
+        <span aria-hidden="true">×</span>
+      </button>
+      <button type="button" class="lightbox-nav lightbox-prev" aria-label="Fotografía anterior">
+        <span aria-hidden="true">‹</span>
+      </button>
+      <figure class="lightbox-figure">
+        <img id="lightbox-image" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+      <button type="button" class="lightbox-nav lightbox-next" aria-label="Fotografía siguiente">
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
