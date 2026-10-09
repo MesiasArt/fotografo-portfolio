@@ -53,10 +53,53 @@
     header.classList.toggle("is-scrolled", window.scrollY > 8);
   }
 
+  function startAlbum(item, index) {
+    activePhotos = JSON.parse(item.getAttribute("data-album"));
+    activeAlbumTitle = item.getAttribute("data-title");
+    thumbnails.replaceChildren();
+    activePhotos.forEach(function (photo, photoIndex) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.setAttribute("aria-label", "Ver fotografía " + (photoIndex + 1));
+      var image = document.createElement("img");
+      image.src = photo.src;
+      image.alt = "";
+      image.loading = "lazy";
+      button.appendChild(image);
+      button.addEventListener("click", function () { openLightbox(photoIndex); });
+      thumbnails.appendChild(button);
+    });
+    openLightbox(index);
+  }
+
   function applyFilter(category) {
-    items.forEach(function (item) {
-      var match = category === "todas" || item.getAttribute("data-category") === category;
-      item.hidden = !match;
+    document.querySelectorAll(".category-photo").forEach(function (photo) { photo.remove(); });
+    items.forEach(function (item) { item.hidden = category !== "todas"; });
+    if (category === "todas") return;
+    var album = items.find(function (item) { return item.getAttribute("data-category") === category; });
+    if (!album) return;
+    var gallery = document.querySelector(".gallery");
+    JSON.parse(album.getAttribute("data-album")).forEach(function (photo, index) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "gallery-item category-photo";
+      button.setAttribute("aria-label", "Abrir " + album.getAttribute("data-title") + ", fotografía " + (index + 1));
+      var frame = document.createElement("span");
+      frame.className = "gallery-frame";
+      var image = document.createElement("img");
+      image.src = photo.src;
+      image.alt = photo.alt;
+      image.loading = "lazy";
+      image.decoding = "async";
+      frame.appendChild(image);
+      var arrow = document.createElement("span");
+      arrow.className = "photo-arrow";
+      arrow.setAttribute("aria-hidden", "true");
+      arrow.textContent = "↗";
+      frame.appendChild(arrow);
+      button.appendChild(frame);
+      button.addEventListener("click", function () { startAlbum(album, index); });
+      gallery.appendChild(button);
     });
   }
 
@@ -128,24 +171,7 @@
   });
 
   items.forEach(function (item) {
-    item.addEventListener("click", function () {
-      activePhotos = JSON.parse(item.getAttribute("data-album"));
-      activeAlbumTitle = item.getAttribute("data-title");
-      thumbnails.replaceChildren();
-      activePhotos.forEach(function (photo, index) {
-        var button = document.createElement("button");
-        button.type = "button";
-        button.setAttribute("aria-label", "Ver fotografía " + (index + 1));
-        var image = document.createElement("img");
-        image.src = photo.src;
-        image.alt = "";
-        image.loading = "lazy";
-        button.appendChild(image);
-        button.addEventListener("click", function () { openLightbox(index); });
-        thumbnails.appendChild(button);
-      });
-      openLightbox(0);
-    });
+    item.addEventListener("click", function () { startAlbum(item, 0); });
   });
 
   closeControls.forEach(function (control) {
