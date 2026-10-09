@@ -15,6 +15,8 @@
   var closeControls = document.querySelectorAll("[data-lightbox-close]");
 
   var currentIndex = 0;
+  var activePhotos = [];
+  var activeAlbumTitle = "";
   var lastFocus = null;
   var touchStartX = 0;
   var touchStartY = 0;
@@ -58,25 +60,19 @@
   }
 
   function openLightbox(index) {
-    var visible = visibleItems();
-    if (!visible.length || !lightbox) return;
-
-    currentIndex = (index + visible.length) % visible.length;
-    var item = visible[currentIndex];
-    var img = item.querySelector("img");
-    var full = item.getAttribute("data-full") || (img && img.getAttribute("src"));
-    var caption = item.getAttribute("data-caption") || "";
-
-    if (lightbox.hidden) {
-      lastFocus = document.activeElement;
-    }
-    lightboxImage.src = full;
-    lightboxImage.alt = img ? img.alt : caption;
-    lightboxCaption.textContent = caption;
+    if (!activePhotos.length || !lightbox) return;
+    currentIndex = (index + activePhotos.length) % activePhotos.length;
+    var photo = activePhotos[currentIndex];
+    var opening = lightbox.hidden;
+    if (opening) lastFocus = document.activeElement;
+    lightboxImage.src = photo.src;
+    lightboxImage.alt = photo.alt;
+    lightboxCaption.textContent = activeAlbumTitle + " — " + (currentIndex + 1) + " / " + activePhotos.length;
+    prevBtn.hidden = nextBtn.hidden = activePhotos.length < 2;
     lightbox.hidden = false;
     closeMenu();
     setBodyLock(true);
-    document.querySelector(".lightbox-close").focus();
+    if (opening) document.querySelector(".lightbox-close").focus();
   }
 
   function closeLightbox() {
@@ -127,7 +123,9 @@
 
   items.forEach(function (item) {
     item.addEventListener("click", function () {
-      openLightbox(indexFromItem(item));
+      activePhotos = JSON.parse(item.getAttribute("data-album"));
+      activeAlbumTitle = item.getAttribute("data-title");
+      openLightbox(0);
     });
   });
 
@@ -160,7 +158,7 @@
       event.preventDefault();
       stepLightbox(1);
     } else if (event.key === "Tab") {
-      var focusable = lightbox.querySelectorAll("button");
+      var focusable = Array.prototype.filter.call(lightbox.querySelectorAll("button"), function (button) { return !button.hidden; });
       if (!focusable.length) return;
       var first = focusable[0];
       var last = focusable[focusable.length - 1];
