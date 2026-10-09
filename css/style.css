@@ -20,3 +20,12 @@
 .plan-featured .plan-price,.plan-featured .plan-link{border-color:#ffffff45}
 .plan-link:hover{color:#a08d66}
 @media(max-width:800px){.hero-image{width:100%;object-position:65% 30%}.hero-shade{background:linear-gradient(90deg,#182c35eb,#182c3590 65%,#182c3550),linear-gradient(0deg,#182c35e0,transparent 60%)}.plans-grid{grid-template-columns:1fr;gap:18px}.plan-card{padding:30px}.plan-description{margin-bottom:20px}}
+/* Preserve the full composition of the selected portrait photographs. */
+.gallery-frame{background:#e9e7e2}
+.gallery-frame img{height:auto;aspect-ratio:3/4;object-fit:contain}
+.gallery-item:nth-child(2n) .gallery-frame img{object-position:center}
+.about-photo img{height:auto;aspect-ratio:4/5;object-fit:cover}
+.contact-image img{object-position:center 30%}
+.hero-image{object-position:center 35%}
+@media(max-width:800px){.gallery-frame img{height:auto}.about-photo img{height:auto}.hero-image{object-position:center 35%}}
+@media(max-width:480px){.gallery-frame img{height:auto}.about-photo img{height:auto}}
