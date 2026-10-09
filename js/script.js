@@ -14,6 +14,7 @@
   var nextBtn = document.querySelector(".lightbox-next");
   var closeControls = document.querySelectorAll("[data-lightbox-close]");
 
+  var thumbnails = document.getElementById("album-thumbnails");
   var currentIndex = 0;
   var activePhotos = [];
   var activeAlbumTitle = "";
@@ -72,6 +73,11 @@
     lightbox.hidden = false;
     closeMenu();
     setBodyLock(true);
+    Array.prototype.forEach.call(thumbnails.children, function (button, index) {
+      button.setAttribute("aria-pressed", index === currentIndex ? "true" : "false");
+    });
+    var selected = thumbnails.children[currentIndex];
+    if (selected) selected.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "instant" });
     if (opening) document.querySelector(".lightbox-close").focus();
   }
 
@@ -125,6 +131,19 @@
     item.addEventListener("click", function () {
       activePhotos = JSON.parse(item.getAttribute("data-album"));
       activeAlbumTitle = item.getAttribute("data-title");
+      thumbnails.replaceChildren();
+      activePhotos.forEach(function (photo, index) {
+        var button = document.createElement("button");
+        button.type = "button";
+        button.setAttribute("aria-label", "Ver fotografía " + (index + 1));
+        var image = document.createElement("img");
+        image.src = photo.src;
+        image.alt = "";
+        image.loading = "lazy";
+        button.appendChild(image);
+        button.addEventListener("click", function () { openLightbox(index); });
+        thumbnails.appendChild(button);
+      });
       openLightbox(0);
     });
   });

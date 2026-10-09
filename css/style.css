@@ -29,3 +29,18 @@
 .hero-image{object-position:center 35%}
 @media(max-width:800px){.gallery-frame img{height:auto}.about-photo img{height:auto}.hero-image{object-position:center 35%}}
 @media(max-width:480px){.gallery-frame img{height:auto}.about-photo img{height:auto}}
+/* Uniform album covers and a thumbnail carousel in the enlarged viewer. */
+.gallery{grid-template-columns:repeat(4,minmax(0,1fr));gap:36px 22px}
+.gallery-frame{aspect-ratio:3/4;background:transparent}
+.gallery-frame img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover}
+.gallery-caption{font-size:28px}
+.lightbox-figure{width:calc(100vw - 140px);max-width:1100px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lightbox-figure>img{max-height:calc(100svh - 190px);max-width:100%;object-fit:contain}
+.lightbox-figure figcaption{margin-top:0}
+.album-thumbnails{display:flex;gap:10px;max-width:100%;overflow-x:auto;padding:6px 3px;scrollbar-width:thin}
+.album-thumbnails button{flex:0 0 58px;height:74px;padding:0;border:2px solid transparent;background:transparent;opacity:.55;border-radius:2px}
+.album-thumbnails button[aria-pressed="true"]{border-color:var(--paper);opacity:1}
+.album-thumbnails button:hover{opacity:1}
+.album-thumbnails img{width:100%;height:100%;object-fit:cover}
+@media(max-width:1000px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.gallery{gap:26px 14px}.gallery-caption{font-size:23px}.gallery-meta{font-size:7px;letter-spacing:.8px}.photo-arrow{width:30px;height:30px;bottom:10px;right:10px}.lightbox-figure{width:calc(100vw - 70px);max-width:none}.album-thumbnails button{flex-basis:44px;height:58px}.lightbox-figure>img{max-height:calc(100svh - 170px)}.lightbox-nav{font-size:32px;padding:4px}.lightbox-prev{left:5px}.lightbox-next{right:5px}}
