@@ -194,3 +194,20 @@
     if (window.innerWidth > 800) closeMenu();
   });
 })();
+document.querySelectorAll('[data-service]').forEach(function (link) {
+  link.addEventListener('click', function () {
+    document.getElementById('servicio').value = link.dataset.service;
+  });
+});
+document.getElementById('inquiry-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var name = document.getElementById('nombre').value.trim();
+  if (!name) { document.getElementById('nombre').setCustomValidity('Escribe tu nombre.'); document.getElementById('nombre').reportValidity(); return; }
+  document.getElementById('inquiry-message').textContent = 'Hola, Manuel. Soy ' + name + '. Me gustaría consultar disponibilidad y una propuesta para una sesión de ' + document.getElementById('servicio').value.toLowerCase() + '.';
+  document.getElementById('inquiry-result').hidden = false;
+});
+document.getElementById('nombre').addEventListener('input', function () { this.setCustomValidity(''); });
+document.getElementById('copy-inquiry').addEventListener('click', async function () {
+  try { await navigator.clipboard.writeText(document.getElementById('inquiry-message').textContent); this.textContent = 'Consulta copiada ✓'; }
+  catch (error) { this.textContent = 'Selecciona y copia el mensaje de arriba'; }
+});
